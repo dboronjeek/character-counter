@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
-// Provjeri jesu li nazivi datoteka u src/images točno ovakvi (mala slova)
 import logoDark from "./images/logo-dark-theme.svg";
 import logoLight from "./images/logo-light-theme.svg";
 import iconSun from "./images/icon-sun.svg";
