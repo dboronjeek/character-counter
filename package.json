@@ -1,8 +1,8 @@
 {
-  "name": "review-submit",
+  "name": "character-counter",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dboronjeek.github.io/character-counter/",
+  "homepage": "https://dboronjeek.github.io/character-counter",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
