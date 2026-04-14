@@ -26,6 +26,7 @@ jobs:
         run: npm install
 
       - name: Build
+        # Dodali smo npx ispred react-scripts u pozadini ili koristimo direktnu skriptu
         run: npm run build
         env:
           CI: false
@@ -38,6 +39,9 @@ jobs:
   deploy:
     needs: build_site
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
