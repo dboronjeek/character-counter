@@ -34,7 +34,6 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          # Budući da su datoteke u rootu, putanja je samo build/
           path: build/
 
   deploy:
