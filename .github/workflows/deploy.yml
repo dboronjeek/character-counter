@@ -21,23 +21,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: "npm"
 
       - name: Install dependencies
-        run: |
-          cd character-counter
-          npm install
+        run: npm install
 
       - name: Build
-        run: |
-          cd character-counter
-          npm run build
+        run: npm run build
         env:
           CI: false
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: character-counter/build/
+          # Budući da su datoteke u rootu, putanja je samo build/
+          path: build/
 
   deploy:
     needs: build_site
