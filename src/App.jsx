@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
+// Provjeri jesu li nazivi datoteka u src/images točno ovakvi (mala slova)
 import logoDark from "./images/logo-dark-theme.svg";
 import logoLight from "./images/logo-light-theme.svg";
 import iconSun from "./images/icon-sun.svg";
@@ -28,6 +29,7 @@ const App = () => {
   const readingTime = Math.ceil(wordCount / 200);
 
   const getLetterDensity = () => {
+    // ISPRAVLJENO: Sada prepoznaje i hrvatska slova
     const letters = text
       .toLowerCase()
       .replace(/[^a-zčćđšž]/g, "")
@@ -83,7 +85,6 @@ const App = () => {
                 <span className="custom-checkbox"></span>
                 Exclude Spaces
               </label>
-
               <label className="checkbox-label">
                 <input
                   type="checkbox"
@@ -93,7 +94,6 @@ const App = () => {
                 <span className="custom-checkbox"></span>
                 Set Character Limit
               </label>
-
               {charLimit && (
                 <input
                   type="number"
@@ -103,13 +103,11 @@ const App = () => {
                 />
               )}
             </div>
-
             <div className="reading-info">
               Approx. reading time: {readingTime < 1 ? "<1" : readingTime}{" "}
               minute
             </div>
           </div>
-
           {isOverLimit && (
             <div className="warning-msg">
               <img src={iconInfo} alt="info" /> Limit exceeded!
